@@ -8,11 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import cloudlab.AppState;
+
 public class App extends Application {
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
+        AppState.cur_UID = -1;
         scene = new Scene(loadFXML("login_page"), 640, 480);
         stage.setScene(scene);
         stage.show();
