@@ -104,14 +104,25 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Groups">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
+                              <HBox alignment="CENTER" prefHeight="0.0" prefWidth="320.0">
+                                 <children>
+                                    <Label text="Groups">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="Join Group">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" text="Create Group">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
                               <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="Group ID" />
@@ -155,7 +166,7 @@
                   </HBox>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" text="Back" onAction="#back" />
+            <Button mnemonicParsing="false" onAction="#back" text="Back" />
          </children>
     </AnchorPane>
   </children>
