@@ -3,6 +3,7 @@ package cloudlab.controllers;
 // java
 import java.io.IOException;
 import java.sql.*;
+import org.postgresql.util.PSQLException;
 
 // application
 import cloudlab.App;
@@ -81,18 +82,26 @@ public class LoginController {
             return;
         }
 
-        PreparedStatement st = App.conn.prepareStatement(
-                "INSERT INTO Users (email, password, first_name, last_name) VALUES (?, ?, ?, ?) RETURNING user_id");
-        st.setString(1, email);
-        st.setString(2, password);
-        st.setString(3, fname);
-        st.setString(4, lname);
-        ResultSet rs = st.executeQuery();
-        rs.next();
-        App.cur_UID = rs.getInt(1);
-        rs.close();
-        st.close();
-        System.out.println("New user ID: " + App.cur_UID);
+        try {
+            PreparedStatement st = App.conn.prepareStatement(
+                    "INSERT INTO Users (email, password, first_name, last_name) VALUES (?, ?, ?, ?) RETURNING user_id");
+            st.setString(1, email);
+            st.setString(2, password);
+            st.setString(3, fname);
+            st.setString(4, lname);
+            ResultSet rs = st.executeQuery();
+            rs.next();
+            App.cur_UID = rs.getInt(1);
+            rs.close();
+            st.close();
+        } catch (PSQLException e) {
+            Alert a = new Alert(AlertType.ERROR);
+            a.setTitle("Error");
+            a.setHeaderText("Invalid input");
+            a.setContentText("Email already in use");
+            a.showAndWait();
+            return;
+        }
 
         App.setRoot("home");
     }
