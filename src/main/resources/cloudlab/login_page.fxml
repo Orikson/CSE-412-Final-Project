@@ -116,12 +116,12 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <TextField promptText="Email">
+                        <TextField promptText="Email" fx:id="emailField">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <PasswordField promptText="Password">
+                        <PasswordField promptText="Password" fx:id="passwordField">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -139,20 +139,20 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField promptText="Email">
+                        <TextField promptText="Email" fx:id="su_emailField">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <PasswordField promptText="Password">
+                        <PasswordField promptText="Password" fx:id="su_passwordField">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </PasswordField>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <TextField promptText="First Name" />
-                              <TextField promptText="Last Name" />
+                              <TextField promptText="First Name" fx:id="su_fnameField" />
+                              <TextField promptText="Last Name" fx:id="su_lnameField" />
                            </children>
                            <VBox.margin>
                               <Insets bottom="10.0" />
