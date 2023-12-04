@@ -86,16 +86,16 @@ My Experiments Screen
     [ ] {JAVA} Make sure timestamp, experiment data, and symbolic link are updated when entry in Jobs in Experiment table is selected
 
 My Groups Screen
-[ ] Buttons
+[x] Buttons
     [x] Back
         [x] GOTO Home
-    [ ] Leave Group
-        [ ] {JAVA} Send SQL query to remove from group; give message on success/failure; send SQL Query to update Groups table
-        [ ] {JAVA} Give error if no group selected
-        [ ] {SQL} Delete AppState.UID membership from group
-[ ] Groups Table
-    [ ] {JAVA} Send SQL Query; update Groups table
-    [ ] {SQL} Get all groups that have AppState.UID as a member
+    [x] Leave Group
+        [x] {JAVA} Send SQL query to remove from group; give message on success/failure; send SQL Query to update Groups table
+        [x] {JAVA} Give error if no group selected
+        [x] {SQL} Delete AppState.UID membership from group
+[x] Groups Table
+    [x] {JAVA} Send SQL Query; update Groups table
+    [x] {SQL} Get all groups that have AppState.UID as a member
 
 Browse Groups Screen
 [ ] Buttons

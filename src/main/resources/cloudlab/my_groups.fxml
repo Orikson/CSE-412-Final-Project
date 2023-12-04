@@ -98,11 +98,11 @@
                   </Label>
                   <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                        <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" fx:id="groups">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Group ID" />
-                            <TableColumn prefWidth="75.0" text="Group Name" />
-                              <TableColumn prefWidth="75.0" text="Number of Members" />
+                            <TableColumn prefWidth="75.0" text="Group ID" fx:id="groupIDColumn" />
+                            <TableColumn prefWidth="75.0" text="Group Name" fx:id="groupNameColumn" />
+                              <TableColumn prefWidth="75.0" text="Number of Members" fx:id="memberCountColumn" />
                           </columns>
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" />
@@ -115,7 +115,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Button mnemonicParsing="false" text="Leave Group" />
+                              <Button mnemonicParsing="false" text="Leave Group" onAction="#leaveGroup" />
                            </children>
                         </VBox>
                      </children>

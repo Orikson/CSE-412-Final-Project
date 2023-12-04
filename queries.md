@@ -205,7 +205,7 @@ Output
 
 TODO: verify this
 ```sql
-SELECT UserInGroup.group_id, Groupss.group_name, COUNT(DISTINCT UserInGroup.user_id) AS member_count FROM Groupss, UserInGroup WHERE Groupss.group_id=UserInGroup.group_id GROUP BY UserInGroup.group_id;
+SELECT Groupss.group_id, Groupss.group_name, member_count FROM Groupss, (SELECT group_id, COUNT(DISTINCT user_id) AS member_count FROM UserInGroup GROUP BY group_id) AS members WHERE Groupss.group_id=Members.group_id;
 ```
 
 ## Get all members of group
