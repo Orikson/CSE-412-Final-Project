@@ -6,7 +6,9 @@ module cloudlab {
 
     opens cloudlab to javafx.fxml;
     opens cloudlab.controllers to javafx.fxml;
+    opens cloudlab.util to javafx.fxml;
 
     exports cloudlab;
     exports cloudlab.controllers;
+    exports cloudlab.util;
 }
