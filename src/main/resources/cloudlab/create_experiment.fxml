@@ -123,11 +123,37 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField promptText="Experiment Name">
+                        <TextField promptText="Experiment Name" fx:id="experimentName">
                            <VBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" />
                            </VBox.margin>
                         </TextField>
+                        <Label text="Jobs">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="10.0" prefWidth="213.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Create Job" onAction="#createJob">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <TableView prefHeight="200.0" prefWidth="200.0" fx:id="instrumentTable">
+                          <columns>
+                            <TableColumn prefWidth="103.20001375675201" text="Instrument ID" fx:id="instrumentIDColumn" />
+                            <TableColumn prefWidth="110.40001678466797" text="Instrument Name" fx:id="instrumentNameColumn" />
+                          </columns>
+                        </TableView>
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -139,30 +165,17 @@
                                     <Font size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <HBox alignment="CENTER" prefHeight="10.0" prefWidth="213.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" text="Create Job">
-                                       <HBox.margin>
-                                          <Insets right="20.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                    <Button mnemonicParsing="false" text="Delete">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                 </children>
+                              <Button mnemonicParsing="false" text="Delete" onAction="#deleteJob">
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="5.0" />
                                  </VBox.margin>
-                              </HBox>
-                              <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              </Button>
+                              <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="jobTable">
                                 <columns>
-                                  <TableColumn prefWidth="92.4000244140625" text="Job Instrument" />
-                                  <TableColumn prefWidth="99.19996948242186" text="Private/Public" />
+                                  <TableColumn prefWidth="92.4000244140625" text="Job Instrument" fx:id="jobInstrumentColumn" />
                                 </columns>
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" />
@@ -182,12 +195,12 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" text="Queue Experiment" />
+                        <Button mnemonicParsing="false" text="Queue Experiment" onAction="#queueExperiment" />
                      </children>
                   </VBox>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" text="Back" onAction="#back" />
+            <Button mnemonicParsing="false" onAction="#back" text="Back" />
          </children>
     </AnchorPane>
   </children>
