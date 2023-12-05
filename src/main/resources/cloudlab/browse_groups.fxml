@@ -111,23 +111,23 @@
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" text="Join Group">
+                                    <Button mnemonicParsing="false" text="Join Group" onAction="#joinGroup">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin>
                                     </Button>
-                                    <Button mnemonicParsing="false" text="Create Group">
+                                    <Button mnemonicParsing="false" text="Create Group" onAction="#createGroup">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin>
                                     </Button>
                                  </children>
                               </HBox>
-                              <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="groups">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Group ID" />
-                                  <TableColumn prefWidth="75.0" text="Group Name" />
-                                    <TableColumn prefWidth="75.0" text="Number of Members" />
+                                  <TableColumn prefWidth="75.0" text="Group ID" fx:id="groupIDColumn" />
+                                  <TableColumn prefWidth="75.0" text="Group Name" fx:id="groupNameColumn" />
+                                    <TableColumn prefWidth="75.0" text="Number of Members" fx:id="memberCountColumn" />
                                 </columns>
                                  <padding>
                                     <Insets bottom="100.0" />
@@ -148,10 +148,10 @@
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="users">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="First Name" />
-                                  <TableColumn prefWidth="75.0" text="Last Name" />
+                                  <TableColumn prefWidth="75.0" text="First Name" fx:id="fnameColumn" />
+                                  <TableColumn prefWidth="75.0" text="Last Name" fx:id="lnameColumn" />
                                 </columns>
                                  <padding>
                                     <Insets bottom="100.0" />

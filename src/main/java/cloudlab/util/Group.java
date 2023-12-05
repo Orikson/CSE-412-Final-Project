@@ -92,9 +92,18 @@ public class Group {
         return this.memberCount;
     }
 
+    public void incrementMemberCount() {
+        this.memberCount++;
+    }
+
+    public void updateMembers() {
+        this.genMembers = false;
+    }
+
     public ArrayList<User> getMembers() throws SQLException {
         if (!this.genMembers) {
             this.genMembers = true;
+            this.members.clear();
 
             // Send SQL query to get all member information
             PreparedStatement st = App.conn
